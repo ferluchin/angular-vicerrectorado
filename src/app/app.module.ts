@@ -40,6 +40,7 @@ import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     CronogramaEspEComponent,
     SidebarComponent,
     TitlebarComponent,
-    LoginComponent
+    LoginComponent,
+    SignUpComponent
   ],
   imports: [
     AngularSplitModule,
