@@ -1,0 +1,167 @@
+<div class="tipo-proyecto">
+  <div class="main-body">
+    <as-split [disabled]="true" direction="horizontal">
+      <as-split-area [size]="20" style="background: white">
+        <app-sidebar></app-sidebar>
+      </as-split-area>
+      <as-split-area [size]="80">
+        <!-- <Split
+                    sizes=[20, 80]
+                    direction="horizontal"
+                    class="split"
+                    minSize=100
+                    expandToMin=false
+                    dragInterval=1
+                    cursor="col-resize"
+                >
+                    <Sidebar
+
+                    /> -->
+        <section>
+          <form class="form" onSubmit=handleSubmit>
+            <!-- <TitleBar /> -->
+            <app-titlebar></app-titlebar>
+
+            <h3>
+              Tipo de Proyecto.
+            </h3>
+            <br />
+
+            <div class="container">
+
+              <div class="row">
+                <div class="col-4">
+                  <h5>
+                    Tipo de Proyecto:
+                  </h5>
+
+                  <select id="tipoProyecto" value=formData.tipoProyecto onChange=handleChange name="tipoProyecto"
+                    class="form-select">
+                    <option value="">-- Elija un Elemento --</option>
+                    <option value="Investigación"> Investigación. </option>
+                    <option value="Innovación"> Innovación. </option>
+                    <option value="Consultoría"> Consultoría. </option>
+                  </select>
+                </div>
+
+                <div class="col-4">
+                  <h5>
+                    Tipo de Investigación:
+                  </h5>
+                  <select id="tipoInvestigacion" value=formData.tipoInvestigacion onChange=handleChange
+                    name="tipoInvestigacion" class="form-select">
+                    <option value="">-- Elija un Elemento --</option>
+                    <option value="Investigación Básica."> Investigación Básica. </option>
+                    <option value="Investigación Aplicada."> Investigación Aplicada. </option>
+                    <option value="Desarrollo Experimental."> Desarrollo Experimental. </option>
+                  </select>
+                </div>
+
+                <div class="col-4">
+                  <h5>
+                    Tipo de Financiamiento:
+                  </h5>
+                  <select id="tipoFinanciamiento" value=formData.tipoFinanciamiento onChange=handleChange
+                    name="tipoFinanciamiento" class="form-select">
+                    <option value="">-- Elija un Elemento --</option>
+                    <option value="ASIGNACIÓN REGULAR IES.">ASIGNACIÓN REGULAR IES. </option>
+                    <option value="FONDOS CONCURSABLES INTERNO IES.">FONDOS CONCURSABLES INTERNO IES. </option>
+                    <option value="FONDOS CONCURSABLES NACIONALES.">FONDOS CONCURSABLES NACIONALES. </option>
+                    <option value="FONDOS CONSURSABLES INTERNACIONALES">FONDOS CONSURSABLES INTERNACIONALES. </option>
+
+                    <option value="ASIGNACIÓN REGULAR IES/FONDOS CONCURSABLES INTERNO IES.">ASIGNACIÓN REGULAR
+                      IES/FONDOS CONCURSABLES INTERNO IES. </option>
+                    <option value="ASIGNACIÓN REGULAR IES/FONDOS CONCURSABLES NACIONALES.">ASIGNACIÓN REGULAR IES/FONDOS
+                      CONCURSABLES NACIONALES. </option>
+                    <option value="ASIGNACIÓN REGULAR IES/FONDOS CONCURSABLES INTERNACIONALES.">ASIGNACIÓN REGULAR
+                      IES/FONDOS CONCURSABLES INTERNACIONALES. </option>
+
+                    <option value="FONDOS CONCURSABLES INTERNO IES/ FONDOS CONCURSABLE NACIONALES.">FONDOS CONCURSABLES
+                      INTERNO IES/ FONDOS CONCURSABLE NACIONALES. </option>
+                    <option value="FONDOS CONCURSABLES INTERNO IES/ FONDOS CONCURSABLE SINTERNACIONALES.">FONDOS
+                      CONCURSABLES INTERNO IES/ FONDOS CONCURSABLE SINTERNACIONALES. </option>
+                    <option value="FONDOS CONCURSABLE INTERNO NACIONALES/FONDOS CONCURSABLES INTERNACIONALES">FONDOS
+                      CONCURSABLE INTERNO NACIONALES/FONDOS CONCURSABLES INTERNACIONALES </option>
+                    <option
+                      value="ASIGNACION REGULAR IES/FONDOS CONCURSABLES INTERNO IES/ FONDO CONCURSABLES INTERNO NACIONALES/FONDOS CONCURSABLES INTERNACIONALES ">
+                      ASIGNACION REGULAR IES/FONDOS CONCURSABLES INTERNO IES/ FONDO CONCURSABLES INTERNO
+                      NACIONALES/FONDOS CONCURSABLES INTERNACIONALES </option>
+
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <br />
+
+            <br />
+
+            <br />
+            <div class="container">
+              <div class="row">
+                <div class="col-4">
+                  <h5>
+                    Organismo (s)/ Entidad (ES) Financiador (ES)
+                  </h5>
+
+                </div>
+                <div class="col-8">
+                  <input type="text" placeholder="Escribir texto" class="form-control"
+                    name="organismoEntidadFinanciador" onChange=handleChange
+                    value=formData.organismoEntidadFinanciador />
+                </div>
+              </div>
+            </div>
+
+
+            <br />
+            <div class="container">
+
+              <div class="row">
+                <div class="col-4">
+                  <h5>
+                    Presupuesto Total
+                  </h5>
+                </div>
+                <div class="col-4">
+                  <h5>
+                    Aporte UTPL
+                  </h5>
+                </div>
+                <div class="col-4">
+                  <h5>
+                    Aporte Contraparte
+                  </h5>
+                </div>
+              </div>
+            </div>
+            <div class="container">
+
+              <div class="row">
+                <div class="col-4">
+                  <input type="number" min=0 placeholder="Ingresar Valor" class="form--input" name="presupuestoTotal"
+                    onChange=handleChange value=formData.presupuestoTotal />
+                </div>
+
+                <div class="col-4">
+
+                  <input type="number" min=0 placeholder="Ingresar Valor" class="form--input" name="aporteUTPL"
+                    onChange=handleChange value=formData.aporteUTPL />
+                </div>
+
+                <div class="col-4">
+                  <input type="number" min=0 placeholder="Ingresar Valor" class="form--input" name="aporteContraparte"
+                    onChange=handleChange value=formData.aporteContraparte />
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-danger">
+              Enviar Información
+            </button>
+          </form>
+        </section>
+      </as-split-area>
+    </as-split>
+    <!-- </Split> -->
+  </div>
+</div>

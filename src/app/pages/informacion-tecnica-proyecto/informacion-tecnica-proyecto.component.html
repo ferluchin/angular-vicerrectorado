@@ -1,0 +1,159 @@
+<div class="informacion-tecnica">
+  <div class="main-body">
+    <as-split [disabled]="true" direction="horizontal">
+      <as-split-area [size]="20" style="background: white">
+        <app-sidebar></app-sidebar>
+      </as-split-area>
+      <as-split-area [size]="80">
+        <section>
+          <form class="form" onSubmit=handleSubmit>
+            <!-- <TitleBar /> -->
+            <app-titlebar></app-titlebar>
+
+            <div class="container">
+
+              <h2> 2. Información Técnica del Proyecto</h2>
+              <div class="row">
+                <div class="col-3">
+                  <h4> 2.1 Resúmen del Proyecto</h4>
+                </div>
+
+                <div class="col-9">
+                  <textarea name="resumenProyecto" value=formData.resumenProyecto
+                    placeholder="Realizar una síntesis clara y concisa del proyecto (máximo 150 palabras)"
+                    onChange=handleChange>
+                  </textarea>
+
+                </div>
+              </div>
+
+
+              <h3> 2.2 Palabras Clave</h3>
+              <div class="row">
+                <div class="col-3">
+                  <input type="text" placeholder="Keywords" class="form--input" name="palabraClave1"
+                    onChange=handleChange value=formData.palabraClave1 />
+                </div>
+                <div class="col-3">
+
+                  <input type="text" placeholder="Keywords" class="form--input" name="palabraClave2"
+                    onChange=handleChange value=formData.palabraClave2 />
+                </div>
+                <div class="col-3">
+
+                  <input type="text" placeholder="Keywords" class="form--input" name="palabraClave3"
+                    onChange=handleChange value=formData.palabraClave3 />
+                </div>
+                <div class="col-3">
+
+                  <input type="text" placeholder="Keywords" class="form--input" name="palabraClave4"
+                    onChange=handleChange value=formData.palabraClave4 />
+                </div>
+              </div>
+
+
+
+              <h4> 2.3 Introducción </h4>
+
+              <div class="row">
+                <div class="col-3">
+                  <h4> a. Antecedentes </h4>
+
+                </div>
+
+                <div class="col-9">
+                  <textarea name="introduccionAntecedentes" value=formData.introduccionAntecedentes
+                    placeholder="Máximo 500 palabras" onChange=handleChange>
+                                        </textarea>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-3">
+                  <h4> b. Justificación </h4>
+
+                </div>
+                <div class="col-9">
+                  <textarea name="introduccionJustificacion" value=formData.introduccionJustificacion
+                    placeholder="Máximo 500 palabras" onChange=handleChange>
+                                        </textarea>
+                </div>
+              </div>
+
+
+              <h4> 2.4 Principales Equipos </h4>
+              <br />
+              <div class="row">
+                <div class="col-6">
+                  <h4> Nombre Equipo </h4>
+
+                </div>
+
+                <div class="col-6">
+                  <h4> Ubicación (Laboratorio) </h4>
+                </div>
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-6">
+                  <input type="text" placeholder="Nombre Equipo" class="form--input" name="nombreEquipo1"
+                    onChange=handleChange value=formData.nombreEquipo1 />
+                </div>
+                <div class="col-6">
+                  <input type="text" placeholder="Ubicación" class="form--input" name="ubicacionEquipo1"
+                    onChange=handleChange value=formData.ubicacionEquipo1 />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <input type="text" placeholder="Nombre Equipo" class="form--input" name="nombreEquipo2"
+                    onChange=handleChange value=formData.nombreEquipo2 />
+                </div>
+                <div class="col-6">
+                  <input type="text" placeholder="Ubicación" class="form--input" name="ubicacionEquipo2"
+                    onChange=handleChange value=formData.ubicacionEquipo2 />
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6">
+                  <input type="text" placeholder="Nombre Equipo" class="form--input" name="nombreEquipo3"
+                    onChange=handleChange value=formData.nombreEquipo3 />
+                </div>
+                <div class="col-6">
+                  <input type="text" placeholder="Ubicación" class="form--input" name="ubicacionEquipo3"
+                    onChange=handleChange value=formData.ubicacionEquipo3 />
+                </div>
+              </div>
+              <br />
+
+              <h4> 2.5 Objetivos del Proyecto.</h4>
+              <br />
+              <div class="row">
+                <div class="col-3">
+                  <h4> Objetivo General: </h4>
+
+                </div>
+                <div class="col-9">
+                  <textarea name="objetivoGeneral" value=formData.objetivoGeneral placeholder="Detallar"
+                    onChange=handleChange>
+                                        </textarea>
+                </div>
+              </div>
+              <br />
+
+            </div>
+
+            <button class="btn btn-primary">
+              Enviar Información
+            </button>
+          </form>
+
+        </section>
+      </as-split-area>
+    </as-split>
+    <!-- </Split> -->
+  </div>
+
+</div>
