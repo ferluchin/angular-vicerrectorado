@@ -1,14 +1,20 @@
 <div class="sidebar-pane">
   <section class="pane sidebar">
     <br />
-    <div class="l-navbar" id="nav-bar">
+    <!-- class="l-navbar" -->
+    <div
+    class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+
+    id="nav-bar">
 
       <h3>Panel de Navegación</h3>
-
-      <nav class="nav">
-          <ul class="w3-ul w3-hoverable">
-            <li>
-              <a class="active" routerLink="/admin">Administrador</a>
+<!-- class="nav" -->
+      <nav
+      class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark"
+      >
+          <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+              <a  class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none"routerLink="/admin">Administrador</a>
             </li>
             <li>
               <a routerLink="/informacion-general">Información General</a>

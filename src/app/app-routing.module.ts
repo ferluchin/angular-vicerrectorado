@@ -13,6 +13,7 @@ import { CronogramaEspEComponent } from './pages/cronograma-esp-e/cronograma-esp
 import { HomeComponent } from './pages/home/home.component';
 import { InformacionGeneralComponent } from './pages/informacion-general/informacion-general.component';
 import { InformacionTecnicaProyectoComponent } from './pages/informacion-tecnica-proyecto/informacion-tecnica-proyecto.component';
+import { LoginComponent } from './pages/login/login.component';
 import { MetodologiaProyectoComponent } from './pages/metodologia-proyecto/metodologia-proyecto.component';
 import { PersonalExternoContratarComponent } from './pages/personal-externo-contratar/personal-externo-contratar.component';
 import { PersonalExternoCooperanteComponent } from './pages/personal-externo-cooperante/personal-externo-cooperante.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
 
   { path: 'admin', component: AdminComponent },
+  { path: 'login', component: LoginComponent },
 
   { path: 'informacion-general', component: InformacionGeneralComponent },
   { path: 'areas-conocimiento', component: AreasConocimientoComponent },

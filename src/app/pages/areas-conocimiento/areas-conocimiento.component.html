@@ -1,16 +1,5 @@
 <div class="areas-conocimiento">
   <div class="main-body">
-    <!-- <Split
-                    sizes=[20, 80]
-                    direction="horizontal"
-                    class="split"
-                    minSize=100
-                    expandToMin=false
-                    dragInterval=1
-                    cursor="col-resize"
-                >
-                    <Sidebar
-                    /> -->
 
     <as-split [disabled]="true" direction="horizontal">
       <as-split-area [size]="20" style="background: white">
@@ -34,8 +23,8 @@
                 <div class="row">
                   <div class="col-4">
                     <h5>Actividad Científica</h5>
-                    <select id="actividadCientifica" value="formData.actividadCientifica" (change)="handleChange($event)"
-                      name="actividadCientifica" class="form-select">
+                    <select id="actividadCientifica" formControlName="actividadCientifica"
+                      (change)="handleChange($event)" name="actividadCientifica" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option value="Ciencias exactas y naturales.">
                         Ciencias exactas y naturales.
@@ -55,8 +44,8 @@
                   <div class="col-4">
                     <h5>Objetivo Socioeconómico</h5>
 
-                    <select id="objetivoSocioEconomico" value="formData.objetivoSocioEconomico" (change)="handleChange($event)"
-                      name="objetivoSocioEconomico" class="form-select">
+                    <select id="objetivoSocioEconomico" formControlName="objetivoSocioEconomico"
+                      (change)="handleChange($event)" name="objetivoSocioEconomico" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option value="Exporación y Explotacion de la tierra.">
                         Exporación y Explotacion de la tierra.
@@ -103,7 +92,7 @@
                   <div class="col-4">
                     <h5>Área tematica de I+D.</h5>
 
-                    <select id="areaTematicaID" value="formData.areaTematicaID" (change)="handleChange($event)"
+                    <select id="areaTematicaID" formControlName="areaTematicaID" (change)="handleChange($event)"
                       name="areaTematicaID" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option value="Soberanía alimentaria y transformación agroproductiva">
@@ -141,7 +130,7 @@
                     <h5>Objetivos del plan de Creación de Oportunidades.</h5>
                   </div>
                   <div class="col-8">
-                    <select id="objetivosPlanCreacionOportunidades" value="formData.objetivosPlanCreacionOportunidades"
+                    <select id="objetivosPlanCreacionOportunidades" formControlName="objetivosPlanCreacionOportunidades"
                       (change)="handleChange($event)" name="objetivosPlanCreacionOportunidades" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option
@@ -243,8 +232,8 @@
                   <div class="col-4">
                     <h5>Campo amplio</h5>
 
-                    <select id="campoAmplio" value="formData.campoAmplio" (change)="handleChange($event)" name="campoAmplio"
-                      class="form-select">
+                    <select id="campoAmplio" formControlName="campoAmplio" (change)="handleChange($event)"
+                      name="campoAmplio" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
 
                       <option value="01-A Educación.">01-A Educación.</option>
@@ -278,7 +267,7 @@
 
                   <div class="col-4">
                     <h5>Campo específico</h5>
-                    <select id="campoEspecifico" value="formData.campoEspecifico" (change)="handleChange($event)"
+                    <select id="campoEspecifico" formControlName="campoEspecifico" (change)="handleChange($event)"
                       name="campoEspecifico" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option value="1-1A Educación">1-1A Educación</option>
@@ -344,7 +333,7 @@
                   <div class="col-4">
                     <h5>Campo detallado</h5>
 
-                    <select id="campoDetallado" value="formData.campoDetallado" (change)="handleChange($event)"
+                    <select id="campoDetallado" formControlName="campoDetallado" (change)="handleChange($event)"
                       name="campoDetallado" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option value="1-11A Educación">1-11A Educación</option>
@@ -594,7 +583,7 @@
                     <h5>Objetivos del desarrollo Sostenible</h5>
                   </div>
                   <div class="col-8">
-                    <select id="objetivosDesarrolloSostenible" value="formData.objetivosDesarrolloSostenible"
+                    <select id="objetivosDesarrolloSostenible" formControlName="objetivosDesarrolloSostenible"
                       (change)="handleChange($event)" name="objetivosDesarrolloSostenible" class="form-select">
                       <option value="">-- Elija un Elemento --</option>
                       <option value="Objetivo 1: Poner fin a la pobreza en todas sus formas en todo el mundo ">
@@ -679,11 +668,17 @@
                     </select>
                   </div>
                 </div>
-                <button class="btn btn-primary btn-block">
+                <br>
+                <button
+                [disabled]="!registrationForm.valid"
+                class="btn btn-primary btn-lg btn-block"
+                type="submit" >
                   Guardar y Continuar
                 </button>
               </div>
             </section>
+            <br>
+            {{ registrationForm.value | json }}
           </form>
         </section>
       </as-split-area>

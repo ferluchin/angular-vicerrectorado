@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-database-83c7b": {
+      "hosting": {
+        "angular-vicerrectorado": [
+          "angular-database-83c7b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-database-83c7b"
+  }
+}

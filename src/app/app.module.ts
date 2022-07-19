@@ -2,6 +2,11 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 import { AngularSplitModule } from 'angular-split';
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +34,12 @@ import { CronogramaEspEComponent } from './pages/cronograma-esp-e/cronograma-esp
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TitlebarComponent } from './components/titlebar/titlebar.component';
+import { LoginComponent } from './pages/login/login.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -54,15 +65,26 @@ import { TitlebarComponent } from './components/titlebar/titlebar.component';
     CronogramaEspDComponent,
     CronogramaEspEComponent,
     SidebarComponent,
-    TitlebarComponent
+    TitlebarComponent,
+    LoginComponent
   ],
   imports: [
     AngularSplitModule,
     BrowserModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
