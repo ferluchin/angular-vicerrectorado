@@ -21,31 +21,112 @@ import { PersonalInternoComponent } from './pages/personal-interno/personal-inte
 import { PruebasComponent } from './pages/pruebas/pruebas.component';
 import { ResumenPresupuestoComponent } from './pages/resumen-presupuesto/resumen-presupuesto.component';
 import { TipoProyectoComponent } from './pages/tipo-proyecto/tipo-proyecto.component';
+import {
+  canActivate,
+  redirectLoggedInTo,
+  redirectUnauthorizedTo,
+} from '@angular/fire/auth-guard'
+import { SignUpComponent } from './components/sign-up/sign-up.component';
+
+const redirectToLogin = () => redirectUnauthorizedTo(['login']);
+const redirectToHome = () => redirectLoggedInTo(['home']);
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
 
-  { path: 'admin', component: AdminComponent },
-  { path: 'login', component: LoginComponent },
+  {
+    path: 'admin',
+    component: AdminComponent
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+    ...canActivate(redirectToHome)
+  },
+  {
+    path: 'sign-up',
+    component: SignUpComponent,
+    ...canActivate(redirectToHome)
+  },
 
-  { path: 'informacion-general', component: InformacionGeneralComponent },
-  { path: 'areas-conocimiento', component: AreasConocimientoComponent },
-  { path: 'tipo-proyecto', component: TipoProyectoComponent },
-  { path: 'personal-interno', component: PersonalInternoComponent },
-  { path: 'personal-externo-contratar', component: PersonalExternoContratarComponent },
-  { path: 'personal-externo-cooperante', component: PersonalExternoCooperanteComponent },
-  { path: 'informacion-tecnica-proyecto', component: InformacionTecnicaProyectoComponent },
-  { path: 'metodologia-proyecto', component: MetodologiaProyectoComponent },
-  { path: 'cronograma-actividades', component: CronogramaActividadesComponent },
-  { path: 'cronograma-esp-a', component: CronogramaEspAComponent },
-  { path: 'cronograma-esp-b', component: CronogramaEspBComponent },
-  { path: 'cronograma-esp-c', component: CronogramaEspCComponent },
-  { path: 'cronograma-esp-d', component: CronogramaEspDComponent },
-  { path: 'cronograma-esp-e', component: CronogramaEspEComponent },
-  { path: 'resumen-presupuesto', component: ResumenPresupuestoComponent },
-  { path: 'pruebas', component: PruebasComponent },
+
+  {
+    path: 'informacion-general',
+    component: InformacionGeneralComponent
+  },
+
+  {
+    path: 'areas-conocimiento',
+    component: AreasConocimientoComponent,
+    ...canActivate(redirectToLogin)
+  },
+  {
+    path: 'tipo-proyecto',
+    component: TipoProyectoComponent
+  },
+  {
+    path: 'personal-interno',
+    component: PersonalInternoComponent
+  },
+  {
+    path: 'personal-externo-contratar',
+    component: PersonalExternoContratarComponent
+  },
+  {
+    path: 'personal-externo-cooperante',
+    component: PersonalExternoCooperanteComponent
+  },
+  {
+    path: 'informacion-tecnica-proyecto',
+    component: InformacionTecnicaProyectoComponent
+  },
+  {
+    path: 'metodologia-proyecto',
+    component: MetodologiaProyectoComponent
+  },
+  {
+    path: 'cronograma-actividades',
+    component: CronogramaActividadesComponent
+  },
+  {
+    path: 'cronograma-esp-a',
+    component: CronogramaEspAComponent
+  },
+  {
+    path: 'cronograma-esp-b',
+    component: CronogramaEspBComponent
+  },
+  {
+    path: 'cronograma-esp-c',
+    component: CronogramaEspCComponent
+  },
+  {
+    path: 'cronograma-esp-d',
+    component: CronogramaEspDComponent
+  },
+  {
+    path: 'cronograma-esp-e',
+    component: CronogramaEspEComponent
+  },
+  {
+    path: 'resumen-presupuesto',
+    component: ResumenPresupuestoComponent
+  },
+  {
+    path: 'pruebas',
+    component: PruebasComponent
+  },
 
 
 ];

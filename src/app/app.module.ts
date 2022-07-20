@@ -7,6 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AngularSplitModule } from 'angular-split';
 import { AppRoutingModule } from './app-routing.module';
@@ -41,6 +42,8 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { HotToastModule } from '@ngneat/hot-toast';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +71,8 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     SidebarComponent,
     TitlebarComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ProfileComponent,
   ],
   imports: [
     AngularSplitModule,
@@ -78,7 +82,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    
+
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
@@ -86,7 +90,9 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
-    provideFirestore(() => getFirestore())
+    provideFirestore(() => getFirestore()),
+    HotToastModule.forRoot(),
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

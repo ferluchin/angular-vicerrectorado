@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
-
+import { HotToastModule, HotToastService } from '@ngneat/hot-toast';
 
 @Component({
   selector: 'app-login',
@@ -41,12 +41,12 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password).pipe(
       this.toast.observe({
-        success: 'Bienvenido',
-        loading: 'Cargando...',
-        error: 'Error al iniciar sesión'
+        success: 'Logged in successfully',
+        loading: 'Logging in...',
+        error: ({ message }) => `There was an error: ${message} `
       })
-    ).suscribe(() => {
-      this.router.navigate(['/informacion-general']);
-    })
+    ).subscribe(() => {
+      this.router.navigate(['/home']);
+    });
   }
 }
